@@ -1,4 +1,4 @@
-package yamlstructure
+package yaml
 
 import (
 	"fmt"

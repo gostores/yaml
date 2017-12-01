@@ -3,13 +3,13 @@
 To install, run:
 
 ```
-$ go get github.com/gostores/yamlstructure
+$ go get github.com/gostores/yaml
 ```
 
 And import using:
 
 ```
-import "github.com/gostores/yamlstructure"
+import "github.com/gostores/yaml"
 ```
 
 Usage is very similar to the JSON library:
@@ -20,7 +20,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gostores/yamlstructure"
+	"github.com/gostores/yaml"
 )
 
 type Person struct {
@@ -31,7 +31,7 @@ type Person struct {
 func main() {
 	// Marshal a Person struct to YAML.
 	p := Person{"John", 30}
-	y, err := yamlstructure.Marshal(p)
+	y, err := yaml.Marshal(p)
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 		return
@@ -44,7 +44,7 @@ func main() {
 
 	// Unmarshal the YAML back into a Person struct.
 	var p2 Person
-	err = yamlstructure.Unmarshal(y, &p2)
+	err = yaml.Unmarshal(y, &p2)
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 		return
@@ -56,7 +56,7 @@ func main() {
 }
 ```
 
-`yamlstructure.YAMLToJSON` and `yamlstructure.JSONToYAML` methods are also available:
+`yaml.YAMLToJSON` and `yaml.JSONToYAML` methods are also available:
 
 ```go
 package main
@@ -64,12 +64,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/gostores/yamlstructure"
+	"github.com/gostores/yaml"
 )
 
 func main() {
 	j := []byte(`{"name": "John", "age": 30}`)
-	y, err := yamlstructure.JSONToYAML(j)
+	y, err := yaml.JSONToYAML(j)
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 		return
@@ -79,7 +79,7 @@ func main() {
 	name: John
 	age: 30
 	*/
-	j2, err := yamlstructure.YAMLToJSON(y)
+	j2, err := yaml.YAMLToJSON(y)
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 		return
