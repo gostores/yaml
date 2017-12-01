@@ -3,13 +3,13 @@
 To install, run:
 
 ```
-$ go get github.com/gostores/yaml
+$ go get github.com/gostores/yamlstructure
 ```
 
 And import using:
 
 ```
-import "github.com/gostores/yaml"
+import "github.com/gostores/yamlstructure"
 ```
 
 Usage is very similar to the JSON library:
@@ -20,7 +20,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gostores/yaml"
+	"github.com/gostores/yamlstructure"
 )
 
 type Person struct {
@@ -64,7 +64,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gostores/yaml"
+	"github.com/gostores/yamlstructure"
 )
 
 func main() {
